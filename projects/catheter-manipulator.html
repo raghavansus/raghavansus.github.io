@@ -1,1 +1,47 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Catheter Manipulation Hardware | Raghavan Ramaswamy</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="project-page"><a class="back" href="../index.html#projects">← Back to projects</a><p class="section-label" style="margin-top:70px">PROJECT CASE STUDY</p><h1>Catheter Manipulation Hardware</h1><p class="summary">Mechanical and electromechanical design for controlled catheter manipulation.</p><div class="project-image placeholder" style="margin:45px 0 65px">ADD HERO IMAGE / VIDEO</div><section class="project-section"><h2>Context & objective</h2><p>Explain the problem, why it matters, project constraints, and the goal of your work.</p></section><section class="project-section"><h2>My contribution</h2><p>Clearly identify what you personally designed, built, analyzed, tested, or implemented.</p><ul><li>Contribution / responsibility #1</li><li>Contribution / responsibility #2</li><li>Contribution / responsibility #3</li></ul></section><section class="project-section"><h2>Design & process</h2><p>Describe your approach. Add CAD, diagrams, prototypes, experiment photos, code screenshots, or other media that help an employer understand your engineering decisions.</p></section><section class="project-section"><h2>Results & impact</h2><p>Show quantitative results where possible and explain the technical or social value of the work.</p></section><section class="project-section"><h2>Reflection</h2><p>Briefly explain what you learned, what you would change, or what the next engineering step would be.</p></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catheter Manipulation Hardware | Raghavan Ramaswamy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main class="project-page">
+<a class="back" href="../index.html#projects">← Back to projects</a>
+<p class="section-label" style="margin-top:70px">PROJECT CASE STUDY</p>
+<h1>Catheter Manipulation Hardware</h1>
+<p class="summary">Mechanical and electromechanical development for controlled catheter translation, rotation, and force feedback.</p>
+<div class="project-image placeholder" style="margin:45px 0 65px">ADD HERO IMAGE / VIDEO</div>
+
+<section class="project-section">
+<h2>Context & objective</h2>
+<p>The master–slave endovascular testbed needed a manipulation mechanism that could reliably translate and rotate a catheter or guidewire on the slave side, and — looking ahead — reflect the forces of that interaction back to the operator. The objective was to design that hardware to SOLIDWORKS-modeled tolerances and validate it against real interaction forces, so the mechanism would hold up across repeated human-factors testing.</p>
+</section>
+
+<section class="project-section">
+<h2>My contribution</h2>
+<ul>
+<li>Designed and prototyped a haptic force-feedback system in SOLIDWORKS, characterizing endovascular interaction forces across 100+ trials.</li>
+<li>Developed the mechanical design for controlled catheter translation and rotation, integrated with the platform's ESP32-based motor control.</li>
+<li>Applied DFM (Design for Manufacturing) principles throughout to keep the mechanism manufacturable and serviceable for repeated study use.</li>
+</ul>
+</section>
+
+<section class="project-section">
+<h2>Design & process</h2>
+<p>I modeled the manipulation hardware in SOLIDWORKS, iterating on the translation/rotation mechanism and the force-sensing path that feeds the haptic feedback system. Characterizing interaction forces across 100+ trials gave me a working picture of the force ranges the mechanism needed to sense and reproduce, which shaped both the structural design and the sensor placement.</p>
+</section>
+
+<section class="project-section">
+<h2>Results & impact</h2>
+<p>The resulting hardware is the physical manipulation layer of the <a href="endovascular-testbed.html">Remote Endovascular Surgery Testbed</a>, and the force-characterization data now informs how force feedback will be layered into future iterations of the platform.</p>
+</section>
+
+<section class="project-section">
+<h2>Reflection</h2>
+<p>Characterizing real interaction forces before finalizing the mechanical design paid off — it kept the haptic system grounded in measured data instead of assumptions. The next step is closing the loop end-to-end: feeding live force-sensor data back through the master device during actual navigation tasks.</p>
+</section>
+</main>
+</body>
+</html>

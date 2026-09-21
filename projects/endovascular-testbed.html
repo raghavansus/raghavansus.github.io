@@ -1,1 +1,48 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Remote Endovascular Surgery Testbed | Raghavan Ramaswamy</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="project-page"><a class="back" href="../index.html#projects">← Back to projects</a><p class="section-label" style="margin-top:70px">PROJECT CASE STUDY</p><h1>Remote Endovascular Surgery Testbed</h1><p class="summary">A modular research platform for comparing operator interfaces under matched experimental conditions.</p><div class="project-image placeholder" style="margin:45px 0 65px">ADD HERO IMAGE / VIDEO</div><section class="project-section"><h2>Context & objective</h2><p>Explain the problem, why it matters, project constraints, and the goal of your work.</p></section><section class="project-section"><h2>My contribution</h2><p>Clearly identify what you personally designed, built, analyzed, tested, or implemented.</p><ul><li>Contribution / responsibility #1</li><li>Contribution / responsibility #2</li><li>Contribution / responsibility #3</li></ul></section><section class="project-section"><h2>Design & process</h2><p>Describe your approach. Add CAD, diagrams, prototypes, experiment photos, code screenshots, or other media that help an employer understand your engineering decisions.</p></section><section class="project-section"><h2>Results & impact</h2><p>Show quantitative results where possible and explain the technical or social value of the work.</p></section><section class="project-section"><h2>Reflection</h2><p>Briefly explain what you learned, what you would change, or what the next engineering step would be.</p></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remote Endovascular Surgery Testbed | Raghavan Ramaswamy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main class="project-page">
+<a class="back" href="../index.html#projects">← Back to projects</a>
+<p class="section-label" style="margin-top:70px">PROJECT CASE STUDY</p>
+<h1>Remote Endovascular Surgery Testbed</h1>
+<p class="summary">A modular master–slave robotic platform for studying operator interfaces and motion scaling in endovascular navigation.</p>
+<div class="project-image placeholder" style="margin:45px 0 65px">ADD HERO IMAGE / VIDEO</div>
+
+<section class="project-section">
+<h2>Context & objective</h2>
+<p>Master–slave robotic platforms let a surgeon operate a catheter or guidewire remotely, but interface choices — like how much an operator's hand motion is scaled down before it reaches the instrument — directly affect precision, task performance, and workload. At CERLAB (Carnegie Mellon University), the goal was to build a testbed capable of switching between multiple motion-scaling conditions on demand, so those effects could be measured directly in a controlled human-factors study rather than inferred from prior literature.</p>
+</section>
+
+<section class="project-section">
+<h2>My contribution</h2>
+<p>As a graduate research student, I led the hardware and controls development of the platform from concept through a working, study-ready system.</p>
+<ul>
+<li>Designed and built an ESP32-based master–slave endovascular robotic platform with 4 selectable motion-scaling levels for catheter and guidewire manipulation.</li>
+<li>Implemented closed-loop motor control achieving &lt;2° steady-state error, and developed validation methods that reduced debugging time by ~50%.</li>
+<li>Integrated &gt;200 Hz sensor feedback to keep the master and slave sides synchronized in real time.</li>
+</ul>
+</section>
+
+<section class="project-section">
+<h2>Design & process</h2>
+<p>The platform pairs an operator-facing master device with a motorized slave mechanism, connected over an ESP32-based control loop. I iterated on the motor control architecture to hit sub-2° steady-state accuracy, and built out validation tooling — logging, sensor checks, and repeatable test routines — that made it dramatically faster to isolate hardware and firmware issues during development. High-rate (&gt;200 Hz) sensor feedback keeps master and slave motion tightly coupled across all four scaling conditions.</p>
+</section>
+
+<section class="project-section">
+<h2>Results & impact</h2>
+<p>The completed testbed became the hardware backbone for two related efforts: a 16-participant human-factors study quantifying how motion scaling affects accuracy, task performance, and workload (see <a href="motion-scaling.html">Motion Scaling Study</a>), and a SOFA-based simulated vessel environment built as an alternative output device for the same platform (see <a href="guidewire-simulation.html">Guidewire Navigation Simulation</a>).</p>
+</section>
+
+<section class="project-section">
+<h2>Reflection</h2>
+<p>This project pushed me deep into real-time embedded control and sensor synchronization under tight timing constraints. The natural next step is integrating the haptic force-feedback subsystem I prototyped separately (see <a href="catheter-manipulator.html">Catheter Manipulation Hardware</a>) directly into the master-side controls, closing the loop between what the simulated or physical vessel "feels" and what the operator feels at the input device.</p>
+</section>
+</main>
+</body>
+</html>

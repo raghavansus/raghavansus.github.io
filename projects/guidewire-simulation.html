@@ -1,1 +1,47 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Guidewire Navigation Simulation | Raghavan Ramaswamy</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="project-page"><a class="back" href="../index.html#projects">← Back to projects</a><p class="section-label" style="margin-top:70px">PROJECT CASE STUDY</p><h1>Guidewire Navigation Simulation</h1><p class="summary">A SOFA-based environment for simulated guidewire navigation and interaction.</p><div class="project-image placeholder" style="margin:45px 0 65px">ADD HERO IMAGE / VIDEO</div><section class="project-section"><h2>Context & objective</h2><p>Explain the problem, why it matters, project constraints, and the goal of your work.</p></section><section class="project-section"><h2>My contribution</h2><p>Clearly identify what you personally designed, built, analyzed, tested, or implemented.</p><ul><li>Contribution / responsibility #1</li><li>Contribution / responsibility #2</li><li>Contribution / responsibility #3</li></ul></section><section class="project-section"><h2>Design & process</h2><p>Describe your approach. Add CAD, diagrams, prototypes, experiment photos, code screenshots, or other media that help an employer understand your engineering decisions.</p></section><section class="project-section"><h2>Results & impact</h2><p>Show quantitative results where possible and explain the technical or social value of the work.</p></section><section class="project-section"><h2>Reflection</h2><p>Briefly explain what you learned, what you would change, or what the next engineering step would be.</p></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guidewire Navigation Simulation | Raghavan Ramaswamy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main class="project-page">
+<a class="back" href="../index.html#projects">← Back to projects</a>
+<p class="section-label" style="margin-top:70px">PROJECT CASE STUDY</p>
+<h1>Guidewire Navigation Simulation</h1>
+<p class="summary">A SOFA-based simulation environment built as the output device for the endovascular testbed, in lieu of a physical slave mechanism.</p>
+<div class="project-image placeholder" style="margin:45px 0 65px">ADD HERO IMAGE / SIMULATION</div>
+
+<section class="project-section">
+<h2>Context & objective</h2>
+<p>Running human-factors studies on a fully physical master–slave platform is slow to iterate on and hard to scale across many participants and target configurations. The objective was to build a simulated vessel environment that could stand in for the physical output device on the <a href="endovascular-testbed.html">Remote Endovascular Surgery Testbed</a> — modeling guidewire and catheter behavior realistically enough to support real human-subject testing.</p>
+</section>
+
+<section class="project-section">
+<h2>My contribution</h2>
+<ul>
+<li>Built a SOFA-based simulation environment modeling guidewire/catheter translation, rotation, and vessel interaction.</li>
+<li>Integrated the simulation with the master-side controls of the endovascular testbed so it functions as a drop-in replacement for the physical output device.</li>
+<li>Structured the environment to support the target configurations and scaling conditions used in the motion-scaling human-factors study.</li>
+</ul>
+</section>
+
+<section class="project-section">
+<h2>Design & process</h2>
+<p>Using the SOFA physics framework, I modeled vessel geometry and guidewire/catheter interaction so the simulated instrument responds to master-side input the same way the physical slave mechanism would — translation, rotation, and contact with vessel walls. Connecting it to the same master controls as the physical testbed meant the human-factors study could run entirely in simulation without changing the operator's experience at the input device.</p>
+</section>
+
+<section class="project-section">
+<h2>Results & impact</h2>
+<p>This simulation environment is the system currently being used to conduct the <a href="motion-scaling.html">Motion Scaling Study</a> — all 16 participants navigate to targets in the simulated vessel across all 4 scaling conditions, rather than on physical hardware, making the study far easier to run and repeat.</p>
+</section>
+
+<section class="project-section">
+<h2>Reflection</h2>
+<p>Building the simulation forced me to think carefully about which aspects of physical guidewire/vessel interaction actually matter for the study's outcome measures versus which are cosmetic. The next step is layering in force feedback, so the simulated vessel can drive the haptic system prototyped in <a href="catheter-manipulator.html">Catheter Manipulation Hardware</a>.</p>
+</section>
+</main>
+</body>
+</html>
